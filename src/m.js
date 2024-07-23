@@ -27,8 +27,16 @@ export default function M() {
           backgroundSize: "cover",
           backgroundPosition: "top",
           backgroundRepeat: "repeat-y",
+        
         }}
+
+        
+
       >
+        <div className=' pl-20 z-40 pt-5 pb-5 sticky    inline-flex top-0   backdrop-blur-lg font-black bg- -300 w-full'>
+          <nav className='pl-2'>home</nav>
+          <nav className='pl-2'>about</nav>
+        </div>
         <div className="flex flex-col xl:flex-row">
           <motion.div 
             className="flex-col w-1/3 p-20"
@@ -36,7 +44,7 @@ export default function M() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <div className="text-black font-black text-8xl">
+            <div className="text-blue-500 font-black font-helvatica text-8xl">
               Software <br /> Engineer
             </div>
             <motion.div 
@@ -45,14 +53,14 @@ export default function M() {
               animate={{ opacity: 1 }}
               transition={{ duration: 2, delay: 0.5 }}
             >
-              <p className="mt-20 text-lg bg-gradient-to-t from-blue-700 to-black bg-clip-text text-transparent">
+              <p className="mt-20 text-md font-thin bg-gradient-to-t from-blue-700 to-gray-600 bg-clip-text text-transparent">
                 {text}
               </p>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="relative mt-15 flex w-full h-screen opacity-70"
+            className=" z-50 relative mt-15 flex w-full h-screen opacity-70"
             style={{
               backgroundImage: "url('./image1.png')",
               backgroundSize: "cover",
@@ -64,26 +72,26 @@ export default function M() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0 }}
           >
-            <a className="text-7xl font-black absolute  top-96  left-64">
+            <a className="text-5xl font-thin font-black absolute  top-[600px]  left-64">
               <span className="text-white">M </span>
               <span className="text-blue-500">Jay</span>
             </a>
           </motion.div>
 
           <motion.div 
-            className="bg-gray-200 text-8xl font-black w-1/5 hidden xl:block"
+            className="   bg-black text-7xl font-black w-1/5 hidden top-0 xl:block rounded-xl"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <p className="-rotate-90 mt-96">
+            <p className="-rotate-90 text-blue-500 mt-96">
               <span className="text-white">Mihisara</span> Jayasinghe
             </p>
           </motion.div>
         </div>
 
         <motion.div 
-          className="inline-flex absolute top-[740px] text-4xl bg-gray-200 h-24 w-full  font-black justify-left pt-5"
+          className="inline-flex z-50 absolute top-[750px] text-xl bg-gray-300 h-24 w-full  font-black justify-left pt-5 " 
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
