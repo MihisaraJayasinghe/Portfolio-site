@@ -22,7 +22,12 @@ export default function M() {
     <>
       {/* Desktop View */}
       <div className="hidden md:block relative w-full min-h-screen bg-white"
-        
+        style={{
+          backgroundImage: "url('./pexels-alex-andrews-271121-861443.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+          backgroundRepeat: "repeat-y",
+        }}
       >
         <div className="flex flex-col xl:flex-row">
           <motion.div 
