@@ -23,7 +23,7 @@ export default function M() {
       {/* Desktop View */}
       <div className="hidden md:block relative w-full min-h-screen bg-white"
         style={{
-          backgroundImage: "url('./pexels-alex-andrews-271121-861443.png')",
+          backgroundImage: "url('./pexels-alex-andrews-271121-861443.webp')",
           backgroundSize: "cover",
           backgroundPosition: "top",
           backgroundRepeat: "repeat-y",
