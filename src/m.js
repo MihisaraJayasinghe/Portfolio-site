@@ -33,11 +33,11 @@ export default function M() {
         
 
       >
-        <div className=' pl-20 z-40 pt-5 pb-5 sticky    inline-flex top-0   backdrop-blur-lg font-black bg- -300 w-full'>
+        <div className=' pl-20 z-30 pt-5 pb-5 sticky    inline-flex top-0   backdrop-blur-lg font-black bg- -300 w-full'>
           <nav className='pl-2'>home</nav>
           <nav className='pl-2'>about</nav>
         </div>
-        <div className="flex flex-col xl:flex-row">
+        <div className="flex h-full flex-col xl:flex-row">
           <motion.div 
             className="flex-col w-1/3 p-20"
             initial={{ opacity: 0, x: -50 }}
@@ -60,7 +60,7 @@ export default function M() {
           </motion.div>
 
           <motion.div
-            className=" z-50 relative mt-15 flex w-full h-screen opacity-70"
+            className=" z-40 relative mt-15 flex w-full h-screen opacity-70 "
             style={{
               backgroundImage: "url('./image1.png')",
               backgroundSize: "cover",
@@ -90,8 +90,19 @@ export default function M() {
           </motion.div>
         </div>
 
+        <div className='z-50 h-40 absolute top-[780px] w-full bg-black text-gray-800 flex items-center justify-left p-4'>
+   
+  <blockquote className='  text-xl pl-10 text-left  '>
+  <div className="text-sm font-mono animate-blink">
+       system.out.println("guess my favourite language");
+      </div>
+  </blockquote>
+</div>
+
+
         <motion.div 
-          className="inline-flex z-50 absolute top-[750px] text-xl bg-gray-300 h-24 w-full  font-black justify-left pt-5 " 
+
+          className="inline-flex z-50 fixed bottom-0 text-blue-500 text-xl bg-black h-10 w-full  font-black justify-left pt-1 " 
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
@@ -103,8 +114,8 @@ export default function M() {
           <nav className="pl-4">UI/UX</nav>
         </motion.div>
 
-        <div className='h-96'>
-          kalfaskaskdaskdaaaskm
+        <div className='z-50 h-96'>
+          
         </div>
       </div>
 
