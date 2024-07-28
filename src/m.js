@@ -1,13 +1,33 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import {useScroll, useTransform } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
 
 export default function M() {
   const [loading, setLoading] = useState(true);
+
   const [text, setText] = useState("");
+  const { scrollY } = useScroll();
+
+  const scale = useTransform(scrollY, [0, 500], [0, 1 ]);
   const fullText =
     "I am a skilled software developer specializing in web development and Java programming. With expertise in MERN stack and WordPress, I have successfully delivered a variety of online projects. My passion lies in crafting efficient and user-friendly solutions that leverage cutting-edge technologies to solve complex challenges.";
 
   useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      lerp: 0.1, // Adjust smoothness here
+      duration: 1.2 // Scroll duration
+    });
+
+    // Add scroll listener
+    const animate = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+
+    // Handle text animation
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -21,9 +41,13 @@ export default function M() {
       }
     }, 10);
 
+    
+
     return () => {
       clearTimeout(timer);
       clearInterval(interval);
+      // Cleanup Lenis
+      lenis.destroy();
     };
   }, []);
 
@@ -43,7 +67,7 @@ export default function M() {
         <>
           {/* Desktop View */}
           <div className="hidden md:block relative w-full min-h-screen  -white">
-            <div className=" pl-20 z-30 pt-5 pb-5 sticky inline-flex top-0 backdrop-blur-lg font-black bg-300 w-full">
+            <div className="pl-20 z-30 pt-5 pb-5 sticky inline-flex top-0 backdrop-blur-lg font-black bg-300 w-full">
               <nav className="pl-2">home</nav>
               <nav className="pl-2">about</nav>
             </div>
@@ -89,7 +113,7 @@ export default function M() {
               </motion.div>
 
               <motion.div
-                className="bg-black text-7xl fixed right-0 top-0 bottom-0 font-black w-1/5 hidden top-0 xl:block "
+                className="bg-black z-40 text-7xl fixed right-0 top-0 bottom-0 font-black w-1/5 hidden top-0 xl:block "
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -98,14 +122,6 @@ export default function M() {
                   <span className="text-white"> Mihisara</span> Jayasinghe
                 </p>
               </motion.div>
-
-              {/* <div className='z-50 h-40 absolute top-[780px] w-full bg-gradient-to-b from-transparent via-black to-black text-gray-800 flex items-center justify-left p-4'>
-              <blockquote className='text-xl pl-10 text-left'>
-                <div className="text-sm font-mono animate-blink">
-                  system.out.println("guess my favourite language");
-                </div>
-              </blockquote>
-            </div> */}
 
               <motion.div
                 className="inline-flex z-50 fixed bottom-0 text-blue-500 text-xl bg-black h-10 w-full font-black justify-left pt-1"
@@ -119,34 +135,29 @@ export default function M() {
                 <nav className="pl-4">Mobile</nav>
                 <nav className="pl-4">UI/UX</nav>
               </motion.div>
-
-              
             </div>
-
-
-
-            <div className="grid  ml-20 grid-cols-2 md:grid-cols-9 text-xl font-black mb-20 gap-4  mr-64">
-              <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">JavaScript</div>
-              <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">Java</div>
-              <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">C</div>
-              <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">C++</div>
-              <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">MERN</div>
-              <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">PHP</div>
-              <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">Android</div>
-             </div>
-           
-        
-            
-           
-          
-        
-
-         
-
-           
-          </div>
-
-
+            <motion.div
+      className="   backdrop-blur-lg  min-h-screen"
+      style={{ scale }}
+    >
+      <div className="grid ml-20 grid-cols-2 md:grid-cols-8 text-md mr-96 font-black mb-20 gap-4 mr-64">
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">JavaScript</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">Java</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C++</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">MERN</div>
+        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">PHP</div>
+        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">Android</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">JavaScript</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">Java</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C++</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">MERN</div>
+        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">PHP</div>
+        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">Android</div>
+      </div>
+    </motion.div>
+</div>
           {/* Mobile View */}
           <div
             className="block md:hidden relative w-full min-h-screen bg-white"
