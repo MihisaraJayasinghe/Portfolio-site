@@ -9,20 +9,19 @@ export default function M() {
   const [text, setText] = useState("");
   const { scrollY } = useScroll();
 
-  const scale = useTransform(scrollY, [0, 500], [0, 1 ]);
+  const scale = useTransform(scrollY, [0, 700], [0,1 ]);
+  const scale2 = useTransform(scrollY, [2000, 3000], [0,1.5 ]);
+  const opacity = useTransform(scrollY, [0, 900], [0, 1]);
+
   const fullText =
     "I am a skilled software developer specializing in web development and Java programming. With expertise in MERN stack and WordPress, I have successfully delivered a variety of online projects. My passion lies in crafting efficient and user-friendly solutions that leverage cutting-edge technologies to solve complex challenges.";
 
   useEffect(() => {
     // Initialize Lenis
-    const lenis = new Lenis({
-      lerp: 0.1, // Adjust smoothness here
-      duration: 1.2 // Scroll duration
-    });
-
+     
     // Add scroll listener
     const animate = (time) => {
-      lenis.raf(time);
+     
       requestAnimationFrame(animate);
     };
     requestAnimationFrame(animate);
@@ -47,7 +46,7 @@ export default function M() {
       clearTimeout(timer);
       clearInterval(interval);
       // Cleanup Lenis
-      lenis.destroy();
+      
     };
   }, []);
 
@@ -137,27 +136,75 @@ export default function M() {
               </motion.div>
             </div>
             <motion.div
-      className="   backdrop-blur-lg  min-h-screen"
-      style={{ scale }}
+      className="   backdrop-blur-md h-screen pt-40   "
+      style={{opacity, scale  }}
     >
-      <div className="grid ml-20 grid-cols-2 md:grid-cols-8 text-md mr-96 font-black mb-20 gap-4 mr-64">
-        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">JavaScript</div>
-        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">Java</div>
+      <div className="grid ml-20 grid-cols-5 md:grid-cols-4 text-4xl justify-center  font-black    gap-10 pr-96  text-center">
+        <div className="p-4 text-white h-48 backdrop-blur-sm bg-gray-900 bg-opacity-10 rounded-lg shadow-md">JavaScript</div>
+        <div className="p-4 text-blue-500 h-48 backdrop-blur-sm bg-gray-900 bg-opacity-10 rounded-lg shadow-md">Java</div>
+        <div className="p-4 text-white backdrop- bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C</div>
+        <div className="p-4 text-white backdrop-blur-sm bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C++</div>
+        <div className="p-4 text-white h-48 bg-gray-900 bg-opacity-10 rounded-lg shadow-md">MERN</div>
+        <div className="p-4 text-white bg-gray-200 rounded-lg shadow-md">PHP</div>
+        <div className="p-4 text-white bg-gray-200 rounded-lg shadow-md">Android</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">python</div>
+        {/* <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">Java</div>
         <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C</div>
         <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C++</div>
         <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">MERN</div>
         <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">PHP</div>
-        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">Android</div>
-        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">JavaScript</div>
-        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">Java</div>
-        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C</div>
-        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C++</div>
-        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">MERN</div>
-        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">PHP</div>
-        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">Android</div>
+        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">Android</div> */}
       </div>
     </motion.div>
+
+
+    <motion.div
+      className="   backdrop-blur-md    "
+      style={{ scale, opacity }}
+    >
+ 
+    <div >
+
+      <h1 className="text-7xl ml-20 mt-40 font-thin text-white">My Projects</h1>
+
+      <div className="grid ml-20 mt-20 grid-cols-1 md:grid-cols-1 text-md max-w-fit  font-black   gap-4   text-center">
+        <div className="p-4 text-white backdrop-blur-sm    rounded-lg shadow-md">
+          
+        
+          
+          <div className=" inline-flex">
+            
+            <div className="w-40 h-36 bg-gray-900">sfasf</div>
+            <div className="text-left ml-20">sdsd
+            <div className="text-center text-sm font-light">sasfdsf dfsdf dfsfsdfsd fsdfsdfdsf sdfsdfsd fsdfsdfds fsdfsdfsd fsdfsdf sdfsdfsd fsdfsdfsd fsdfsdf dsfsdf</div>
+            </div>
+          
+            
+             </div>
+           
+           
+          
+          
+          
+          </div>
+        <div className="p-4 text-blue-500 backdrop-blur-sm bg-gray-900 bg-opacity-10 rounded-lg shadow-md">Java</div>
+         
+        {/* <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">Java</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">C++</div>
+        <div className="p-4 text-white bg-gray-900 bg-opacity-10 rounded-lg shadow-md">MERN</div>
+        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">PHP</div>
+        <div className="p-4 text-white bg-gray-900 rounded-lg shadow-md">Android</div> */}
+      </div>
+    </div>
+  </motion.div>
 </div>
+
+
+
+
+
+
           {/* Mobile View */}
           <div
             className="block md:hidden relative w-full min-h-screen bg-white"
