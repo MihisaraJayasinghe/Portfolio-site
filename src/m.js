@@ -247,7 +247,7 @@ export default function M() {
               `}</style>
 
               <div className="mt-96 mb-96 w-4/5 ml-20 ">
-                <h2 className="text-4xl pt-20 font-black mb-6 text-blue-500">
+                <h2 className="text-4xl bg-white font-black mb-6 text-blue-500">
                   Projects
                 </h2>
                 <div
@@ -300,6 +300,11 @@ export default function M() {
               <ContactMe/>
             </motion.div>
           </div>
+
+
+
+
+          
         </>
       )}
     </>
