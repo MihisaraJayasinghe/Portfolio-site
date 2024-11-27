@@ -33,7 +33,7 @@ export default function ContactMe() {
           {/* Contact Information */}
           <div className="flex flex-col items-center md:items-start">
             <FaEnvelope className="text-3xl mb-4 text-blue-500" />
-            <p className="text-lg">pasanmihisarajayasinghe@example.com</p>
+            <p className="text-lg">pasanmihisarajayasinghe@gmail.com</p>
              
             <FaMapMarkerAlt className="text-3xl mt-6 mb-4 text-blue-500" />
             <p className="text-lg">Colombo, Sri Lanka</p>
